@@ -7,7 +7,7 @@ import java.util.Map;
  * @Date: 2021/1/30 16:43
  * @Description:
  */
-public interface TestService {
+public interface TestScheduleService {
 
 	String generateSign(Map<String, Object> params, String appSecret,
 			String signMethod);

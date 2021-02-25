@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @Description:
  */
 @Service
-public class TestServiceImpl implements TestService {
+public class TestScheduleServiceImpl implements TestScheduleService {
 
 
 	@Override

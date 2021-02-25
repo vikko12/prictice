@@ -53,7 +53,7 @@ public class MeiTuanTest {
 			requestParam.put("app_key", "1000055");
 			requestParam.put("deviceId", UUID.randomUUID().toString().replace("-", ""));
 			requestParam.put("city", "杭州");
-			requestParam.put("timestamp", "2021-02-01 10:00:10");
+			requestParam.put("timestamp", "2021-02-20 18:00:10");
 			requestParam.put("format", "json");
 			requestParam.put("v", "1");
 			requestParam.put("sign_method", "MD5");
