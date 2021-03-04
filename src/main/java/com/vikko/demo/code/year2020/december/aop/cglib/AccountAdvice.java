@@ -1,6 +1,5 @@
-package com.vikko.demo.december.test.cglib;
+package com.vikko.demo.code.year2020.december.test.cglib;
 
-import io.lettuce.core.dynamic.intercept.MethodInvocation;
 import java.lang.reflect.Method;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
