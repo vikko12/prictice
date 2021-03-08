@@ -1,4 +1,4 @@
-package com.vikko.demo.code.year2020.december.test.cglib;
+package com.vikko.demo.code.year2020.december.aop.cglib;
 
 import java.lang.reflect.Method;
 import org.springframework.cglib.proxy.MethodInterceptor;

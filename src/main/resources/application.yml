@@ -33,3 +33,11 @@ spring:
         min-idle: 0
         max-wait: 2ms
     timeout: 5000ms
+
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    # 开启驼峰映射
+    map-underscore-to-camel-case: true
+    # 允许将表中null值字段映射到对象字段中
+    call-setters-on-nulls: true

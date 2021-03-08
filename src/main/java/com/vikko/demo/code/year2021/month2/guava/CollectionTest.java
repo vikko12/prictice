@@ -1,7 +1,9 @@
 package com.vikko.demo.code.year2021.month2.guava;
 
 import com.google.common.collect.Sets;
+import java.util.HashMap;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author: vikko
@@ -11,6 +13,22 @@ import java.util.Set;
 public class CollectionTest {
 
 	public static void main(String[] args) {
+		hashMapTest();
+	}
+
+	public static void hashMapTest(){
+		System.out.println(111);
+		HashMap<String, String> hashMap = new HashMap<>();
+		hashMap.put("test","test");
+		hashMap.put("test2","test");
+	}
+
+	public static void conCurrentHashMapTest(){
+		ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
+		map.put("test","test");
+	}
+
+	public static void guavaTest(){
 		Set<Integer> set1 = Sets.newHashSet(1, 2, 3, 4, 5);
 		Set<Integer> set2 = Sets.newHashSet(3, 4, 5, 6);
 		Sets.SetView<Integer> inter = Sets.intersection(set1, set2); //交集
@@ -22,4 +40,6 @@ public class CollectionTest {
 
 		Set<Integer> difference = Sets.difference(set1, set2);
 	}
+
+
 }

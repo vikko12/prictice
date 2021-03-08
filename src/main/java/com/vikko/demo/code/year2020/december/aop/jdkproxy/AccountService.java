@@ -1,4 +1,4 @@
-package com.vikko.demo.code.year2020.december.test.jdkproxy;
+package com.vikko.demo.code.year2020.december.aop.jdkproxy;
 /**
  * @author: vikko
  * @Date: 2020/12/1 13:44

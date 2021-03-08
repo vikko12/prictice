@@ -1,4 +1,4 @@
-package com.vikko.demo.code.year2020.december.test.jdkproxy;
+package com.vikko.demo.code.year2020.december.aop.jdkproxy;
 
 import java.lang.reflect.Proxy;
 
