@@ -1,5 +1,6 @@
 package com.vikko.demo.code.year2021.month2.collection;
 
+import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -15,6 +16,8 @@ public class Test {
 
 		concurrentHashMap.put("test","testValue");
 
+		HashMap<String, String> hashMap = new HashMap<>();
+		hashMap.put("key","value");
 	}
 
 
