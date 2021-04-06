@@ -11,12 +11,14 @@ import java.util.stream.IntStream;
 public class MergeSort {
 
 	public static void mergeSort(int a[], int left, int right) {
+		//注意范围
 		if (left < right) {
 			int mid = left + (right - left) / 2;
 			//左边的再分成，分成俩个更小的数组
 			mergeSort(a, left, mid);
 			//右边的再分，分成俩个更小的数组
 			mergeSort(a, mid + 1, right);
+			//对分好组的元素进行排序
 			merge(a, left, mid, right);
 		}
 	}
@@ -29,7 +31,11 @@ public class MergeSort {
 		int i = left;
 		int j = mid + 1;
 		int t = 0;
-		//插入首个元素
+		/**
+		 * 注意循环范围条件
+		 * 循环插入首个元素,left-mid，mid+1 - left两个局部已经排序好了
+		 * while插入，并且移动temp和当前arr的指针
+		 */
 		while (i <= mid && j <= right) {
 			if (arr[i] < arr[j]) {
 				temp[t++] = arr[i++];
@@ -45,6 +51,7 @@ public class MergeSort {
 		while (j <= right) {
 			temp[t++] = arr[j++];
 		}
+		//将temp数组的元素赋给arr，注意起始位置
 		for (int x = 0; x < temp.length; x++) {
 			arr[left + x] = temp[x];
 		}

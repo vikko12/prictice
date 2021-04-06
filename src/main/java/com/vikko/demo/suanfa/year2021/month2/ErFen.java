@@ -38,4 +38,23 @@ public class ErFen {
 		return nums.length;
 	}
 
+
+	/**
+	 *
+	 * @param array
+	 * @param low
+	 * @param high
+	 * @param target
+	 * @return
+	 */
+	public static int binarySearch(int array[], int low, int high, int target) {
+		if (low > high) return -1;
+		int mid = low + (high - low) / 2;
+		if (array[mid] > target)
+			return binarySearch(array, low, mid - 1, target);
+		if (array[mid] < target)
+			return binarySearch(array, mid + 1, high, target);
+		return mid;
+	}
+
 }
