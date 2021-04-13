@@ -18,6 +18,7 @@ public class LengthOfLongestSubstring {
 		 * 记录字符上一次出现的位置
 		 * 索引是char的int值
 		 * value是出现的位置
+		 * 最后的res是等于当前位置减去上一次出现的位置
 		 */
 
 		int[] last = new int[128];

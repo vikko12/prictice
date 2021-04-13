@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
  */
 public class MergeSort {
 
-	public static void mergeSort(int a[], int left, int right) {
+	public static void mergeSort(int[] a, int left, int right) {
 		//注意范围
 		if (left < right) {
 			int mid = left + (right - left) / 2;
