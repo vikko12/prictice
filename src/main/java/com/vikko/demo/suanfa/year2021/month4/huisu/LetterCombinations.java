@@ -1,4 +1,4 @@
-package com.vikko.demo.suanfa.year2021.month4;
+package com.vikko.demo.suanfa.year2021.month4.huisu;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +13,23 @@ import java.util.Map;
 public class LetterCombinations {
 
     public static void main(String[] args) {
+        System.out.println(letterCombinations("56"));
+    }
 
+
+    public static void backtrack(List<String> combinations, Map<Character, String> phoneMap, String digits, int index, StringBuffer combination) {
+        if (index == digits.length()) {
+            combinations.add(combination.toString());
+        } else {
+            char digit = digits.charAt(index);
+            String letters = phoneMap.get(digit);
+            int lettersLength = letters.length();
+            for (int i = 0; i < lettersLength; i++) {
+                combination.append(letters.charAt(i));
+                backtrack(combinations, phoneMap, digits, index + 1, combination);
+                combination.deleteCharAt(index);
+            }
+        }
     }
 
     public static List<String> letterCombinations(String digits) {
@@ -33,20 +49,5 @@ public class LetterCombinations {
         }};
         backtrack(combinations, phoneMap, digits, 0, new StringBuffer());
         return combinations;
-    }
-
-    public static void backtrack(List<String> combinations, Map<Character, String> phoneMap, String digits, int index, StringBuffer combination) {
-        if (index == digits.length()) {
-            combinations.add(combination.toString());
-        } else {
-            char digit = digits.charAt(index);
-            String letters = phoneMap.get(digit);
-            int lettersCount = letters.length();
-            for (int i = 0; i < lettersCount; i++) {
-                combination.append(letters.charAt(i));
-                backtrack(combinations, phoneMap, digits, index + 1, combination);
-                combination.deleteCharAt(index);
-            }
-        }
     }
 }
