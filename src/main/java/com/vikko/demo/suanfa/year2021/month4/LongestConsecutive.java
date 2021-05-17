@@ -42,7 +42,6 @@ public class LongestConsecutive {
 			}
 			pre = cur;
 		}
-
 		return res+1;
 	}
 
