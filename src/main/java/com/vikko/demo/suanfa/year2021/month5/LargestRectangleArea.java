@@ -11,7 +11,9 @@ import java.util.Deque;
 public class LargestRectangleArea {
 
 	public static void main(String[] args) {
-		int[] a = {7,6,5,4,3};
+//		int[] a = {7,6,5,4,3};
+//		int[] a = {1,1,1,3,1,1,1,1,5,1,1,1,1,1,1,2,1,1};
+		int[] a = {2, 1, 5, 6, 2, 3};
 		int i = largestRectangleArea(a);
 		System.out.println(i);
 	}
@@ -28,6 +30,7 @@ public class LargestRectangleArea {
 			// 若当前柱体 i 的高度小于栈顶柱体的高度，说明 i 是栈顶柱体的「右边第一个小于栈顶柱体的柱体」。
 			// 因此以栈顶柱体为高的矩形的左右宽度边界就确定了，可以计算面积🌶️ ～
 			//当前高度小于栈顶的高度,while找到左边小于当前高度
+			//self,当前值小，就把它pop，并计算，所以这个stack是单调递增的
 			while (!stack.isEmpty() && tmp[i] < tmp[stack.peek()]) {
 				//n取栈顶的高度
 				int h = tmp[stack.pop()];
