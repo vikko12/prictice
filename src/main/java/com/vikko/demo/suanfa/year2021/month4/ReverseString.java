@@ -1,7 +1,12 @@
 package com.vikko.demo.suanfa.year2021.month4;
 
+import com.vikko.demo.suanfa.year2021.month5.ReverseString2;
+
 import java.util.Arrays;
 
+/**
+ * @see ReverseString2
+ */
 public class ReverseString {
 
     public static void main(String[] args) {
@@ -17,5 +22,9 @@ public class ReverseString {
             s[left] = s[right];
             s[right] = tmp;
         }
+    }
+
+    public static void reverseString2(){
+
     }
 }
