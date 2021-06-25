@@ -1,4 +1,4 @@
-package com.vikko.demo.code.Toolkit;
+package com.vikko.demo.code.toolkit;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

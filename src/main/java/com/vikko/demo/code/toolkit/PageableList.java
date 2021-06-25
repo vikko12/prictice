@@ -1,11 +1,8 @@
-package com.vikko.demo.code.Toolkit;
+package com.vikko.demo.code.toolkit;
 
 import com.google.common.collect.Lists;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.function.Consumer;
 import java.util.function.Function;
 import lombok.Getter;
 import lombok.NonNull;

@@ -1,4 +1,4 @@
-package com.vikko.demo.code.Toolkit;
+package com.vikko.demo.code.toolkit;
 
 /**
  * @author: vikko
