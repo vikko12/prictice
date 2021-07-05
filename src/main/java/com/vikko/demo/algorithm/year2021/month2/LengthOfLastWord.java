@@ -15,7 +15,7 @@ public class LengthOfLastWord {
 
 	public static int lengthOfLastWord(String s){
 
-		if(s.equals("")){
+		if("".equals(s)){
 			return 0;
 		}
 		int res = 0;
