@@ -2,8 +2,6 @@ server:
   port: 10001
 spring:
   profiles:
-    active: SIT
-    include: Swagger2
   application:
     name: itaza-order
   main:
@@ -11,9 +9,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://rm-2ze24207w07l455998o.mysql.rds.aliyuncs.com/itaza_sit?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-    username: visva
-    password: WmaiVisva2018
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 685706
     hikari:
       idle-timeout: 600000
       connection-timeout: 30000
