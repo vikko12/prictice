@@ -133,7 +133,7 @@ public class SkipList {
 
 	public static void main(String[] args) {
 		SkipList skipList = new SkipList();
-		IntStream.rangeClosed(0,1000).forEach(data->skipList.insert(data));
+		IntStream.rangeClosed(0,1000).forEach(skipList::insert);
 		Node node = skipList.find(4);
 		System.out.println(node.toString());
 	}

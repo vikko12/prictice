@@ -7,5 +7,5 @@ package com.vikko.demo.project;
  */
 public interface UserService {
 
-	Integer count();
+	Integer test();
 }
