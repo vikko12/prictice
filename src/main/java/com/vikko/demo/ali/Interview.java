@@ -7,4 +7,9 @@ package com.vikko.demo.ali;
  */
 public class Interview {
 
+    public static void main(String[] args) {
+
+    }
+    
+
 }

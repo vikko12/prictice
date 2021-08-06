@@ -1,4 +1,4 @@
-package com.vikko.demo.jikeshijian.month1;
+package com.vikko.demo.code.month1;
 
 /**
  * @author: vikko

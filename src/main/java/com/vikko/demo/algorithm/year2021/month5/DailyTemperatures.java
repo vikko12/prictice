@@ -30,7 +30,8 @@ public class DailyTemperatures {
 
 	public static int[] test(int[] temperatures) {
 		int[] res = new int[temperatures.length];
-		Deque<Integer> deque = new ArrayDeque<>();
+		Deque<Integer> deque = new LinkedList<>();
+
 		for (int i = 0; i < temperatures.length; i++) {
 			while (!deque.isEmpty() && temperatures[deque.peek()] < temperatures[i]) {
 				res[deque.peek()] = i - deque.pop();
