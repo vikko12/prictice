@@ -1,6 +1,7 @@
 package com.vikko.demo.project;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -18,4 +19,18 @@ public interface UserMapper {
 	 * @return
 	 */
 	int userCount();
+
+	/**
+	 * udp
+	 * @param student
+	 * @return
+	 */
+	int updateStudent(Student student);
+
+	/**
+	 * getById
+	 * @param id
+	 * @return
+	 */
+	Student getById(@Param("id")Integer id);
 }

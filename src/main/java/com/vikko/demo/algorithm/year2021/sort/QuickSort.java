@@ -1,12 +1,14 @@
 package com.vikko.demo.algorithm.year2021.sort;
 
 
+import com.vikko.demo.algorithm.year2021.month6.SortListByQuick;
 import java.util.Arrays;
 
 /**
  * @author: vikko
  * @Date: 2021/2/25 16:31
  * @Description:
+ * @see SortListByQuick
  */
 public class QuickSort {
 

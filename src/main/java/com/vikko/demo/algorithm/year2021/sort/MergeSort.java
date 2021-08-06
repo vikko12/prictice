@@ -1,11 +1,13 @@
 package com.vikko.demo.algorithm.year2021.sort;
 
+import com.vikko.demo.algorithm.year2021.month6.SortListByMerge;
 import java.util.Arrays;
 
 /**
  * @author: vikko
  * @Date: 2021/3/31 13:43
  * @Description:
+ * @see SortListByMerge 这是对链表排序，也是用的归并
  */
 public class MergeSort {
 

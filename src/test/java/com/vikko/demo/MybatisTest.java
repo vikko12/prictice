@@ -27,7 +27,7 @@ public class MybatisTest {
 
 	@Test
 	public void getKeyCount(){
-		Integer count = userService.count();
+		Integer count = userService.test();
 		System.out.println(count);
 	}
 
