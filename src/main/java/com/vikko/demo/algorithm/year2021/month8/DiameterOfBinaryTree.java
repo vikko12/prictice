@@ -4,7 +4,8 @@ package com.vikko.demo.algorithm.year2021.month8;
 /**
  * @author: vikko
  * @Date: 2021/8/9 14:31
- * @Description:
+ * @Description: 树的直径 leetcode543
+ * @see TreeHeight
  */
 public class DiameterOfBinaryTree {
 
