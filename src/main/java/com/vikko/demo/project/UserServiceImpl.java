@@ -21,11 +21,11 @@ public class UserServiceImpl implements UserService {
 	public Integer test(){
 		Student before = userMapper.getById(1);
 		System.out.println(before.toString());
-		Student student = Student.builder()
-				.id(1)
-				.age(55)
-				.build();
-		userMapper.updateStudent(student);
+//		Student student = Student.builder()
+//				.id(1)
+//				.age(55)
+//				.build();
+//		userMapper.updateStudent(student);
 
 		Student after = userMapper.getById(1);
 		System.out.println(after.toString());

@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @author: vikko
  * @Date: 2021/8/13 16:42
- * @Description:
+ * @Description: leetcode 300
  */
 public class LengthOfLIS {
 
@@ -21,6 +21,9 @@ public class LengthOfLIS {
 			}
 			res = Math.max(dp[i], res);
 		}
+		String s = "jtiaoj";
+		char[] chars = s.toCharArray();
+		int length = chars.length;
 		return res;
 	}
 
