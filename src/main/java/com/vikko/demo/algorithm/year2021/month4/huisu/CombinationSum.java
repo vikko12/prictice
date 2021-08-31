@@ -39,7 +39,7 @@ public class CombinationSum {
 
 	public static void main(String[] args) {
 		int[] nums = {2,3,6,7};
-		List<List<Integer>> lists = combinationSum(nums, 12);
+		List<List<Integer>> lists = combinationSum(nums, 7);
 		System.out.println(lists);
 	}
 

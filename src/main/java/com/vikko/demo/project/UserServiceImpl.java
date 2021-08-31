@@ -17,17 +17,17 @@ public class UserServiceImpl implements UserService {
 	private final UserMapper userMapper;
 
 	@Override
-	@Transactional(rollbackFor = Exception.class)
+//	@Transactional(rollbackFor = Exception.class)
 	public Integer test(){
 		Student before = userMapper.getById(1);
 		System.out.println(before.toString());
-//		Student student = Student.builder()
-//				.id(1)
-//				.age(55)
-//				.build();
-//		userMapper.updateStudent(student);
+		Student student = Student.builder()
+				.id(3)
+				.age(33)
+				.build();
+		userMapper.insert(student);
 
-		Student after = userMapper.getById(1);
+		Student after = userMapper.getById(3);
 		System.out.println(after.toString());
 		return after.getId();
 

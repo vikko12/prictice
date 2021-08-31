@@ -9,39 +9,6 @@ package com.vikko.demo.algorithm.year2021.month5;
 public class ReverseKGroup {
 
 
-	public static void main(String[] args) {
-
-	}
-
-	public ListNode reverseKGroup(ListNode head, int k) {
-		ListNode dummy = new ListNode();
-		dummy.next = head;
-		ListNode left = dummy, right = head;
-		int cnt = 0;
-		while(right != null){
-			cnt++;
-			right = right.next;
-			if(cnt % k == 0){
-				left = reverse(left, right);
-			}
-		}
-		return dummy.next;
-	}
-
-	private ListNode reverse(ListNode left, ListNode right){
-		ListNode pre = left, cur = left.next;
-		ListNode first = pre, last = cur;
-		while(cur != right){
-			ListNode nxt = cur.next;
-			cur.next = pre;
-			pre = cur;
-			cur = nxt;
-		}
-		first.next = pre;
-		last.next = right;
-		return last;
-	}
-
 	/**
 	 * 两步反转
 	 * @param head
@@ -56,5 +23,51 @@ public class ReverseKGroup {
 		newHead.next = head;
 		return newHead;
 	}
+
+
+
+	public ListNode reverseKGroup(ListNode head, int k) {
+		if (head == null || head.next == null) {
+			return head;
+		}
+		ListNode tail = head;
+		for (int i = 0; i < k; i++) {
+			//剩余数量小于k的话，则不需要反转。
+			if (tail == null) {
+				return head;
+			}
+			tail = tail.next;
+		}
+		// 第一次返回的newHead就是整个链表的head
+		ListNode newHead = reverse(head, tail);
+		//下一轮的返回的head就是上一轮的next，例如：1的next就是下一轮的6
+		head.next = reverseKGroup(tail, k);
+
+		return newHead;
+	}
+
+	/**
+	 * 反转链表，tail不反转。
+	 * 1-2-3-4-5-6-7-8  -----(head = 1, k = 3， tail = 4)----->   3-2-1  4-5-6-7-8
+	 * @param head
+	 * @param tail
+	 * @return
+	 */
+	private ListNode reverse(ListNode head, ListNode tail) {
+		ListNode pre = null;
+		ListNode next = null;
+		while (head != tail) {
+			next = head.next;
+			head.next = pre;
+			pre = head;
+			head = next;
+		}
+		return pre;
+
+	}
+
+
+
+
 
 }

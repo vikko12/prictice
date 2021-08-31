@@ -16,4 +16,8 @@
 
   </select>
 
+  <insert id="insert" parameterType="com.vikko.demo.project.Student">
+    insert into student (id, age) values (#{id}, #{age})
+  </insert>
+
 </mapper>

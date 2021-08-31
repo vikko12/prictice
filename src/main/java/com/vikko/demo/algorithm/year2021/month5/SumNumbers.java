@@ -12,7 +12,20 @@ public class SumNumbers {
 		helper(root, 0);
 		return sum;
 	}
-	public void helper(TreeNode root, int res) {
+
+	private void helper(TreeNode root, int before){
+		if(root.left == null && root.right == null){
+			sum += before * 10 + root.val;
+		}
+		if(root.left != null){
+			helper(root.left, before * 10 + root.val);
+		}
+		if(root.right != null){
+			helper(root.right, before * 10 + root.val);
+		}
+	}
+
+	public void helper2(TreeNode root, int res) {
 		if (root == null) {
 			return;
 		}

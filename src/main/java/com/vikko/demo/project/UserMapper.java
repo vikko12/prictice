@@ -28,6 +28,13 @@ public interface UserMapper {
 	int updateStudent(Student student);
 
 	/**
+	 * insert
+	 * @param student
+	 * @return
+	 */
+	int insert(Student student);
+
+	/**
 	 * getById
 	 * @param id
 	 * @return
