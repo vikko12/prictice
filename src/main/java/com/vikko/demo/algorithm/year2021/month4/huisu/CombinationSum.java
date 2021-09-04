@@ -16,23 +16,23 @@ public class CombinationSum {
 
 		List<List<Integer>> res = new ArrayList<>();
 		Deque<Integer> path = new ArrayDeque<>();
-		dfs(candidates, 0, target, res, path, 0);
+		dfs(candidates, 0, target, res, path);
 		return res;
 	}
 
-	private static void dfs(int[] candidates, int start, int target, List<List<Integer>> res, Deque<Integer> path, int sum){
-		if(sum == target){
+	private static void dfs(int[] candidates, int start, int target, List<List<Integer>> res, Deque<Integer> path){
+		if(target == 0){
 			res.add(new ArrayList<>(path));
 			return;
-		}else if(sum > target){
+		}else if(target < 0){
 			return;
 		}
 
 		for(int i = start; i <= candidates.length-1; i++){
-			sum += candidates[i];
+			target -= candidates[i];
 			path.offerLast(candidates[i]);
-			dfs(candidates, i  , target, res, path, sum);
-			sum -= candidates[i];
+			dfs(candidates, i  , target, res, path);
+			target += candidates[i];
 			path.removeLast();
 		}
 	}
