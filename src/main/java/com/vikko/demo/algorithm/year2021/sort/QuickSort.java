@@ -43,12 +43,10 @@ public class QuickSort {
 		int i = low, j = high;
 		//外层循环：控制循环范围
 		while (i < j) {
-			//内层循环：因为在内部指针会变化，所以在内部循环也需要控制范围（i<j）
+			//内层循环：需要加上4个判断 i<j）
 			while (i < j && arr[j] > temp) {
-				//如果右边元素一直大于基准元素，j指针左移，直到出现第一个小于或等于基准元素，跳出内层循环
 				j--;
 			}
-			//跳出内部循环后（即意味着出现了比基准元素小的元素，即为下标j的元素）
 			if (i < j) {
 				/**
 				 * 将j的元素赋给i，注意此时arr中有两个值为arr[j]的元素，
@@ -59,7 +57,6 @@ public class QuickSort {
 				i++;
 			}
 
-			//同理可得
 			while (i < j && arr[i] < temp) {
 				i++;
 			}
@@ -67,7 +64,6 @@ public class QuickSort {
 				arr[j] = arr[i];
 				j--;
 			}
-//			a[i] = temp;
 		}
 		arr[i] = temp;
 		return i;

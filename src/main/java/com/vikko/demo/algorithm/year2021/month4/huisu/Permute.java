@@ -13,7 +13,7 @@ public class Permute {
 
 	public static void main(String[] args) {
 		int[] a ={1,2,3};
-		permute(a);
+		System.out.println( permute(a));
 	}
 
 	public static List<List<Integer>> permute(int[] nums) {

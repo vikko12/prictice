@@ -1,13 +1,15 @@
 package com.vikko.demo.algorithm.year2021.month8;
 
+import com.vikko.demo.algorithm.year2021.month9.MinDepth;
+
 /**
  * @author: vikko
  * @Date: 2021/8/30 17:08
  * @Description:
+ * @see MinDepth
  */
 public class MaxDepth {
 	int res = 0;
-
 	public int maxDepth(TreeNode root) {
 		helper(root,0);
 		return res;

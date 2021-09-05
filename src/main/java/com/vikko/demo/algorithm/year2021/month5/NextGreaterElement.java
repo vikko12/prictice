@@ -29,6 +29,11 @@ public class NextGreaterElement {
 		return result;
 	}
 
+	/**
+	 * 接雨水
+	 * @param height
+	 * @return
+	 */
 	public int trap2(int[] height) {
 		if (height == null) {
 			return 0;
