@@ -20,14 +20,14 @@ public class MergeSort {
 			//右边的再分，分成俩个更小的数组
 			mergeSort(a, mid + 1, right);
 			//对分好组的元素进行排序
-			merge(a, left, mid, right);
+			doMerge(a, left, mid, right);
 		}
 	}
 
 	/**
 	 * 合并 
 	 */
-	private static void merge(int[] arr, int left, int mid, int right) {
+	private static void doMerge(int[] arr, int left, int mid, int right) {
 		int[] temp = new int[right - left + 1];
 		int i = left;
 		int j = mid + 1;

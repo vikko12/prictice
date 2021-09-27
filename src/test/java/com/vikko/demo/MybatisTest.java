@@ -1,8 +1,6 @@
 package com.vikko.demo;
 
-import com.vikko.demo.code.year2021.month2.limit.SimpleRateLimiter;
-import com.vikko.demo.project.UserService;
-import java.util.stream.IntStream;
+import com.vikko.demo.project.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,4 +30,14 @@ public class MybatisTest {
 	}
 
 
+	@Test
+	public void transactionTest(){
+		userService.transactionTest();
+	}
+
+
+	@Test
+	public void retryTest(){
+		userService.testRetry();
+	}
 }

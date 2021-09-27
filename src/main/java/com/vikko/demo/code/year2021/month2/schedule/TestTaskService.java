@@ -22,7 +22,7 @@ public class TestTaskService implements SchedulingConfigurer {
 
 	@Override
 	public void configureTasks(ScheduledTaskRegistrar scheduledTaskRegistrar) {
-		scheduledTaskRegistrar.addTriggerTask(()-> System.out.println("执行任务")
+		scheduledTaskRegistrar.addTriggerTask(()-> System.out.println("执行任务=====")
 		, triggerContext -> {
 			String s = SpringDynamicCronTask();
 			// 任务触发，可修改任务的执行周期

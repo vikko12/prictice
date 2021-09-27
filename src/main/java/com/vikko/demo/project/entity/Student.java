@@ -1,4 +1,4 @@
-package com.vikko.demo.project;
+package com.vikko.demo.project.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.vikko.demo.project.UserMapper">
+<mapper namespace="com.vikko.demo.project.mapper.UserMapper">
 
   <select id="userCount" resultType="int">
     select count(1) from student
   </select>
 
-  <update id="updateStudent" parameterType="com.vikko.demo.project.Student">
+  <update id="updateStudent" parameterType="com.vikko.demo.project.entity.Student">
     update student set age = #{age} where id = #{id}
   </update>
 
-  <select id="getById" parameterType="integer" resultType="com.vikko.demo.project.Student">
+  <select id="getById" parameterType="integer" resultType="com.vikko.demo.project.entity.Student">
     select * from student where id = #{id}
 
   </select>
 
-  <insert id="insert" parameterType="com.vikko.demo.project.Student">
+  <insert id="insert" parameterType="com.vikko.demo.project.entity.Student">
     insert into student (id, age) values (#{id}, #{age})
   </insert>
 

@@ -1,8 +1,8 @@
-package com.vikko.demo.project;
+package com.vikko.demo.project.mapper;
 
+import com.vikko.demo.project.entity.Student;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 /**
