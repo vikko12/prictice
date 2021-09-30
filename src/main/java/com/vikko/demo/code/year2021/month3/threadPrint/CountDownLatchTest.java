@@ -19,6 +19,8 @@ public class CountDownLatchTest {
 	public static  void solution(){
 
 		CountDownLatch countDownLatch = new CountDownLatch(2);
+		countDownLatch.countDown();
+//		countDownLatch.countDown();
 
 		new Thread(() -> {
 			while (count < MAX_PRINT_NUM) {
@@ -31,19 +33,20 @@ public class CountDownLatchTest {
 			}
 			// 偶数线程执行完则计数器减一
 			countDownLatch.countDown();
-		}).start();
-
-		new Thread(() -> {
-			while (count < MAX_PRINT_NUM) {
-//				System.out.println("奇数"+ count);
-				if (count % 2 == 1) {
-					System.out.println("奇数num:" + count);
-					count++;
-				}
-			}
-			// 奇数线程执行完则计数器减一
 			countDownLatch.countDown();
 		}).start();
+
+//		new Thread(() -> {
+//			while (count < MAX_PRINT_NUM) {
+////				System.out.println("奇数"+ count);
+//				if (count % 2 == 1) {
+//					System.out.println("奇数num:" + count);
+//					count++;
+//				}
+//			}
+//			// 奇数线程执行完则计数器减一
+//			countDownLatch.countDown();
+//		}).start();
 
 
 
