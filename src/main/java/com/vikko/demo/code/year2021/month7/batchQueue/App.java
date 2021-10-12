@@ -1,4 +1,4 @@
-package com.vikko.demo.code.year2021.month7;
+package com.vikko.demo.code.year2021.month7.batchQueue;
 
 import com.google.common.collect.Queues;
 import java.util.ArrayList;
@@ -6,14 +6,20 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import javax.annotation.Resource;
+import org.springframework.core.task.TaskExecutor;
+import org.springframework.stereotype.Component;
 
 /**
  * @author: vikko
  * @Date: 2021/2/25 16:31
  * @Description:
  */
-public class BatchQueueHandle {
+@Component
+public class App {
 
+	@Resource(name = "commonExecutor")
+	TaskExecutor commonExecutor;
 	/**
 	 * 批量存入数量
 	 */
@@ -26,25 +32,26 @@ public class BatchQueueHandle {
 
 	private static int TIME_OUT = 5;
 
-	public static void main(String[] args) {
+	public void execute() {
 		final BlockingQueue queue = new LinkedBlockingQueue();
 
 //模拟产生日志
 
-		new Thread(() -> {
-			long num = 1L;
-			while (true) {
-				try {
-					queue.put(num);
-					num++;
-					long time = (long) (Math.random() * 1000);
-					Thread.sleep(time);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+		commonExecutor.execute(
+				() -> {
+					long num = 1L;
+					while (true) {
+						try {
+							queue.put(num);
+							num++;
+							long time = (long) (Math.random() * 1000);
+							Thread.sleep(time);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+					}
 				}
-			}
-		}
-		).start();
+		);
 
 		while (true) {
 			try {

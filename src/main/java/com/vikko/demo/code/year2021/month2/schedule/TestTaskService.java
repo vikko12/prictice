@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @Description:
  */
 @Service
-@EnableScheduling
+//@EnableScheduling
 public class TestTaskService implements SchedulingConfigurer {
 
 	private String SpringDynamicCronTask() {
