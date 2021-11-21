@@ -43,6 +43,7 @@ public class OOMTest {
 		private Integer age;
 		private String name;
 		private Long birth;
+		private Long address;
 
 		public User(Long birth) {
 			this.birth = birth;
