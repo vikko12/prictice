@@ -15,6 +15,7 @@ public class OOMTest {
 
 	private void dontStop() {
 		while(true) {
+			System.out.println(System.currentTimeMillis());
 		}
 	}
 
