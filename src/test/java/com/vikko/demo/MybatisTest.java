@@ -1,5 +1,6 @@
 package com.vikko.demo;
 
+import com.vikko.demo.project.mapper.UserMapper;
 import com.vikko.demo.project.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,6 +36,14 @@ public class MybatisTest {
 		userService.transactionTest();
 	}
 
+	@Autowired
+	UserMapper userMapper;
+	@Test
+	public void testOverload(){
+		int allCount = userMapper.userCount(1L);
+//		int likeCount = userMapper.userCount("v");
+		System.out.println(allCount + "====" + 1);
+	}
 
 	@Test
 	public void retryTest(){

@@ -7,6 +7,7 @@ import com.vikko.demo.project.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
@@ -25,16 +26,12 @@ public class UserServiceImpl implements UserService {
 	private static int count = 0;
 
 	@Override
-	@Transactional(rollbackFor = Exception.class)
+	@Transactional(rollbackFor = Exception.class, isolation = Isolation.READ_COMMITTED)
 	public Integer test(){
 		Student before = userMapper.getById(1);
 		System.out.println(before.toString());
-		Student student = Student.builder()
-				.id(3)
-				.age(33)
-				.build();
-		userMapper.insert(student);
 
+		System.out.println("purse");
 		Student after = userMapper.getById(3);
 		System.out.println(after.toString());
 		return after.getId();

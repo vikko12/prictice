@@ -3,6 +3,7 @@ package com.vikko.demo.project.mapper;
 import com.vikko.demo.project.entity.Student;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -18,7 +19,12 @@ public interface UserMapper {
 	 * count
 	 * @return
 	 */
-	int userCount();
+	@Select("select count(1) from student")
+	int userCount(@Param("id")Long id);
+
+
+	@Select("select count(1) from student where name like concat('%',#{name},'%')")
+	int userCount(@Param("name")String name);
 
 	/**
 	 * udp

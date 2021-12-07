@@ -3,9 +3,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.vikko.demo.project.mapper.UserMapper">
 
-  <select id="userCount" resultType="int">
-    select count(1) from student
-  </select>
+<!--  <select id="userCount" resultType="int">-->
+<!--    select count(1) from student-->
+<!--  </select>-->
+
+<!--  <select id="userCount" resultType="int" parameterType="java.lang.String">-->
+<!--    select count(1) from student where name like concat('%',#{name},'%')-->
+<!--  </select>-->
 
   <update id="updateStudent" parameterType="com.vikko.demo.project.entity.Student">
     update student set age = #{age} where id = #{id}
@@ -17,7 +21,7 @@
   </select>
 
   <insert id="insert" parameterType="com.vikko.demo.project.entity.Student">
-    insert into student (id, age) values (#{id}, #{age})
+    insert into student (id, name, age) values (#{id},#{name}, #{age})
   </insert>
 
 </mapper>
