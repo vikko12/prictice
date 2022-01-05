@@ -5,6 +5,7 @@ import com.vikko.demo.project.entity.Student;
 import com.vikko.demo.project.mapper.UserMapper;
 import com.vikko.demo.project.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.codec.protobuf.ProtobufDecoder;
 import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -28,11 +29,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@Transactional(rollbackFor = Exception.class, isolation = Isolation.READ_COMMITTED)
 	public Integer test(){
-		Student before = userMapper.getById(1);
+		Student before = userMapper.getById(3);
 		System.out.println(before.toString());
 
 		System.out.println("purse");
-		Student after = userMapper.getById(3);
+		Student after = userMapper.getByAge(33);
 		System.out.println(after.toString());
 		return after.getId();
 

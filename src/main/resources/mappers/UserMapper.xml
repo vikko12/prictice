@@ -20,6 +20,11 @@
 
   </select>
 
+  <select id="getByAge" parameterType="integer" resultType="com.vikko.demo.project.entity.Student">
+    select * from student where age = #{age}
+
+  </select>
+
   <insert id="insert" parameterType="com.vikko.demo.project.entity.Student">
     insert into student (id, name, age) values (#{id},#{name}, #{age})
   </insert>

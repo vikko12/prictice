@@ -22,6 +22,7 @@ public class SemaphoreTest {
 		@Override
 		public void run() {
 			try {
+				//tryAcquire返回Boolean值
 				semaphore.acquire();
 				System.out.println("工人"+this.num+"占用一个机器在生产...");
 				Thread.sleep(2000);

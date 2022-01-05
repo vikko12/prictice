@@ -23,9 +23,6 @@ public interface UserMapper {
 	int userCount(@Param("id")Long id);
 
 
-	@Select("select count(1) from student where name like concat('%',#{name},'%')")
-	int userCount(@Param("name")String name);
-
 	/**
 	 * udp
 	 * @param student
@@ -46,4 +43,12 @@ public interface UserMapper {
 	 * @return
 	 */
 	Student getById(@Param("id")Integer id);
+	/**
+	 * getById
+	 * @param age
+	 * @return
+	 */
+	Student getByAge(@Param("age")Integer age);
+
+
 }

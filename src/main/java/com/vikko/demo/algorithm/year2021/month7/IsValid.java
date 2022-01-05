@@ -26,10 +26,10 @@ public class IsValid {
 		map.put('(',')');
 		for (char cur : chars) {
 			if(map.containsKey(cur)){
-				deque.offerFirst(cur);
+				deque.offerLast(cur);
 			}else {
-				if(!deque.isEmpty() && map.get(deque.peek()) == cur){
-					deque.pop();
+				if(!deque.isEmpty() && map.get(deque.peekLast()) == cur){
+					deque.removeLast();
 				}else {
 					return false;
 				}

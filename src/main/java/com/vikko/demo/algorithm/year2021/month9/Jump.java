@@ -1,5 +1,6 @@
 package com.vikko.demo.algorithm.year2021.month9;
 
+
 /**
  * @author vikko
  * @date 2021/9/5 14:21
@@ -25,6 +26,23 @@ public class Jump {
             }
         }
         return step;
+    }
+
+
+
+    public int jump2(int[] nums) {
+        int length = nums.length;
+        int end = 0;
+        int maxPosition = 0;
+        int steps = 0;
+        for (int i = 0; i < length - 1; i++) {
+            maxPosition = Math.max(maxPosition, i + nums[i]);
+            if (i == end) {
+                end = maxPosition;
+                steps++;
+            }
+        }
+        return steps;
     }
 
 
