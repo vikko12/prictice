@@ -1,6 +1,5 @@
 package com.vikko.demo.code.year2021.month10.common;
 
-import com.vikko.demo.code.Test;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

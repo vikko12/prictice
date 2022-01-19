@@ -25,6 +25,8 @@ public class CollectionTest {
 
 	public static void conCurrentHashMapTest(){
 		ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
+		map.size();
+		map.mappingCount();
 		map.put("test","test");
 	}
 
