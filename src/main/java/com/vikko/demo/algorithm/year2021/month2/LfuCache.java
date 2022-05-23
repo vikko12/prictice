@@ -8,6 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+
+/**
+ * 双 hash表
+ * @param <K>
+ * @param <V>
+ */
 public class LfuCache<K, V> {
 
     /**

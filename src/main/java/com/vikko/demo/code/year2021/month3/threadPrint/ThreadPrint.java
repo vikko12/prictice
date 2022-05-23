@@ -15,7 +15,7 @@ public class ThreadPrint {
 	CountDownLatch countDownLatch = new CountDownLatch(5);
 
 	public static void main(String[] args) {
-		solution3();
+		solution1();
 	}
 
 	public static void solution1() {

@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 	private static int count = 0;
 
 	@Override
-	@Transactional(rollbackFor = Exception.class, isolation = Isolation.READ_COMMITTED)
+//	@Transactional(rollbackFor = Exception.class, isolation = Isolation.READ_COMMITTED)
 	public Integer test(){
 		Student before = userMapper.getById(3);
 		System.out.println(before.toString());
