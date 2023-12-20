@@ -12,7 +12,7 @@ public class SkipList {
 
 	private static final int MAX_LEVEL = 16;
 
-	private static final float SKIPLIST_P = 0.5f;
+	private static final float SKIPLIST_P = 0.005f;
 
 	private int levelCount = 1;
 
@@ -30,12 +30,16 @@ public class SkipList {
 				p = p.forwards[i];
 			}
 		}
-
+		// p.forwards[i]表示节点p到第i层的下一个节点
 		if (p.forwards[0] != null && p.forwards[0].data == value) {
 			return p.forwards[0];
 		} else {
 			return null;
 		}
+	}
+
+	public Node getHead(){
+		return head;
 	}
 
 	public void insert(int value) {
@@ -133,7 +137,9 @@ public class SkipList {
 
 	public static void main(String[] args) {
 		SkipList skipList = new SkipList();
-		IntStream.rangeClosed(0,1000).forEach(skipList::insert);
+		IntStream.rangeClosed(0,100).forEach(skipList::insert);
+		skipList.printAll();
+
 		Node node = skipList.find(4);
 		System.out.println(node.toString());
 	}
